@@ -1,44 +1,46 @@
 <template>
   <div class="container mt-4">
     <h1 class="mb-3">Elenco Clienti</h1>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Ragione Sociale</th>
-          <th>Indirizzo</th>
-          <th>CAP</th>
-          <th>Città</th>
-          <th>Provincia</th>
-          <th>Sito Web</th>
-          <th>E-mail</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="cliente in clienti"
-          :key="cliente.id"
-          @click="goToDetail(cliente.id)"
-          style="cursor: pointer"
-        >
-          <td>{{ cliente.ragionesociale }}</td>
-          <td>{{ cliente.indirizzo }}</td>
-          <td>{{ cliente.cap }}</td>
-          <td>{{ cliente.city }}</td>
-          <td>{{ cliente.provincia }}</td>
-          <td>
-            <a
-              v-if="cliente.sito_web"
-              :href="cliente.sito_web"
-              target="_blank"
-              @click.stop
-            >
-              {{ cliente.sito_web }}
-            </a>
-          </td>
-          <td>{{ cliente.e_mail }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Ragione Sociale</th>
+            <th>Indirizzo</th>
+            <th>CAP</th>
+            <th>Città</th>
+            <th>Provincia</th>
+            <th>Sito Web</th>
+            <th>E-mail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="cliente in clienti"
+            :key="cliente.id"
+            @click="goToDetail(cliente.id)"
+            style="cursor: pointer"
+          >
+            <td>{{ cliente.ragionesociale }}</td>
+            <td>{{ cliente.indirizzo }}</td>
+            <td>{{ cliente.cap }}</td>
+            <td>{{ cliente.city }}</td>
+            <td>{{ cliente.provincia }}</td>
+            <td>
+              <a
+                v-if="cliente.sito_web"
+                :href="cliente.sito_web"
+                target="_blank"
+                @click.stop
+              >
+                {{ cliente.sito_web }}
+              </a>
+            </td>
+            <td>{{ cliente.e_mail }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 

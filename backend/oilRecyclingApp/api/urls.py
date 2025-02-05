@@ -5,6 +5,7 @@ from .views import (
     OperatoreListCreateAPIView,
     ZoneRetrieveUpdateDestroyAPIView,
     ClienteRetrieveUpdateDestroyAPIView,
+    DailyItineraryAPIView,
 )
 
 urlpatterns = [
@@ -23,4 +24,5 @@ urlpatterns = [
         ClienteRetrieveUpdateDestroyAPIView.as_view(),
         name="cliente-detail-update-delete",
     ),
+    path("itinerary/", DailyItineraryAPIView.as_view(), name="daily-itinerary"),
 ]
