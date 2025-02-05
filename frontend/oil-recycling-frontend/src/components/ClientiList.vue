@@ -52,7 +52,8 @@ const clienti = ref([]);
 
 function goToDetail(id) {
   // Naviga alla rotta per il dettaglio del cliente
-  router.push({ name: 'cliente-detail', params: { id } });
+  // router.push({ name: 'cliente-detail', params: { id } });
+  router.push({ name: 'cliente-edit', params: { id } });
 }
 
 onMounted(async () => {

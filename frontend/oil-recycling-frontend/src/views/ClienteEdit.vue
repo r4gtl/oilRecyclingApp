@@ -36,7 +36,9 @@
           <label class="form-label">E-mail</label>
           <input type="email" class="form-control" v-model="cliente.e_mail" />
         </div>
-        <button type="submit" class="btn btn-primary">Salva Modifiche</button>
+        <button type="submit" class="btn btn-primary me-2">Salva</button>
+        <!-- Pulsante per tornare all'elenco dei clienti -->
+        <button class="btn btn-danger" @click="goToList">Annulla</button>
       </form>
     </div>
     <div v-else>Caricamento in corso...</div>
@@ -72,10 +74,16 @@ async function updateCliente() {
       cliente.value
     );
     console.log('Cliente aggiornato:', response.data);
-    router.push({ name: 'cliente-detail', params: { id: clienteId } });
+    //router.push({ name: 'cliente-detail', params: { id: clienteId } });
+
+    // Dopo l'aggiornamento, torna all'elenco
+    router.push({ name: 'clienti-list' });
   } catch (error) {
     console.error("Errore nell'aggiornare il cliente:", error);
   }
+}
+function goToList() {
+  router.push({ name: 'clienti-list' });
 }
 </script>
 
