@@ -32,3 +32,27 @@ class DailyItinerarySerializer(serializers.ModelSerializer):
         model = DailyItinerary
         fields = ["id", "operatore", "date", "clienti", "clienti_ids"]
         read_only_fields = ["operator", "date"]
+
+
+class ClienteRitiroSerializer(serializers.ModelSerializer):
+    # Un campo che restituisce l'ultimo ritiro effettuato
+    ultimo_ritiro = serializers.DateTimeField(
+        source="last_pickup_datetime", read_only=True
+    )
+
+    class Meta:
+        model = Cliente
+        fields = [
+            "id",
+            "ragionesociale",
+            "indirizzo",
+            "cap",
+            "city",
+            "provincia",
+            "sito_web",
+            "e_mail",
+            "pickup_date",
+            "tolerance_before",
+            "tolerance_after",
+            "ultimo_ritiro",
+        ]

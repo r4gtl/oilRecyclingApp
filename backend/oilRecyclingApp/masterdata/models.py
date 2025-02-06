@@ -27,7 +27,12 @@ class ClienteManager(models.Manager):
 
 
 class Cliente(models.Model):
-    pickup_date = models.DateField()
+    # Un campo unico che indica ogni quanti giorni avviene il ritiro
+    pickup_interval = models.PositiveSmallIntegerField(
+        null=True,
+        blank=True,
+        help_text="Numero di giorni tra i ritiri (ad es.: 30 per un ritiro mensile)",
+    )
     tolerance_before = models.IntegerField(
         default=0, help_text="Giorni di tolleranza prima della data prevista"
     )

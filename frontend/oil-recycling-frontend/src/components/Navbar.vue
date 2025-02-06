@@ -24,6 +24,9 @@
           <li class="nav-item">
             <router-link class="nav-link" to="#">Clienti</router-link>
           </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/zone/">Zone</router-link>
+          </li>
         </ul>
       </div>
     </div>
