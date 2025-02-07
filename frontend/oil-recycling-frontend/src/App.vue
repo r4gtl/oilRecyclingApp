@@ -13,6 +13,4 @@
 import Navbar from './components/Navbar.vue';
 </script>
 
-<style scoped>
-/* eventuali stili globali */
-</style>
+<style scoped></style>
